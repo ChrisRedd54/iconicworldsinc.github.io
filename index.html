@@ -1,23 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Iconic Worlds, Inc.</title>
+  <style>
+    /* Institutional, minimal, Tier-1 safe */
+    body {
+      font-family: Arial, sans-serif;
+      color: black;
+      background: white;
+      max-width: 800px;
+      margin: 40px auto;
+      line-height: 1.6;
+    }
+    header h1 {
+      font-weight: normal; /* typed logotype */
+      margin: 0 0 10px 0;
+    }
+    section { margin: 40px 0; }
+    hr {
+      border: none;
+      border-top: 1px solid #D9D9D9; /* muted divider */
+      margin: 40px 0;
+    }
+    footer {
+      font-size: 0.9em;
+      color: #666; /* light gray legal line */
+      margin-top: 60px;
+      text-align: left;
+    }
+    h2 { margin: 0 0 16px 0; font-weight: normal; }
+    p { margin: 8px 0; }
+  </style>
 </head>
-<body style="font-family: Arial, sans-serif; color: black; background-color: white; max-width: 800px; margin: auto; line-height: 1.5;">
+<body>
 
-  <!-- Header -->
+  <!-- Header (logo as typed text) -->
   <header>
     <h1>Iconic Worlds, Inc.</h1>
-    <img src="assets/logo.png" alt="Iconic Worlds Logo" style="max-height:60px;">
   </header>
 
   <hr>
 
-  <!-- Overview -->
-  <section>
-    <h2>About</h2>
+  <!-- About / Overview -->
+  <section aria-labelledby="about-title">
+    <h2 id="about-title">About</h2>
     <p><strong>Company Type:</strong> Global franchise IP platform</p>
     <p><strong>Business Model:</strong> Licensing</p>
     <p><strong>Vertical Scope:</strong> Entertainment, Gaming, Merchandise, Immersive</p>
@@ -27,16 +55,16 @@
   <hr>
 
   <!-- Contact -->
-  <section>
-    <h2>Contact</h2>
+  <section aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact</h2>
     <p>Email: <a href="mailto:contact@iconicworldsinc.com">contact@iconicworldsinc.com</a></p>
   </section>
 
   <hr>
 
-  <!-- Footer -->
-  <footer style="font-size: 0.9em; color: #333; margin-top: 40px;">
-    <p>Non-offer line. Confidentiality Disclaimer. © 2025 Iconic Worlds, Inc. All rights reserved. | Privacy | Terms</p>
+  <!-- Footer (exact language per spec) -->
+  <footer>
+    <p>Non-offer line + © 2025 Iconic Worlds, Inc. All rights reserved. + Privacy | Terms.</p>
   </footer>
 
 </body>
