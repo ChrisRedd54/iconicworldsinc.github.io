@@ -12,38 +12,51 @@ html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: #0f1116;
+    background: #0e1117;
 }
 
 .hero {
+    position: relative;
     height: 100vh;
     width: 100%;
-    background-image: url('background.jpg');
+    background-image: url('background.png');
     background-position: center center;
-    background-size: contain;   /* was cover */
+    background-size: cover;       /* full bleed */
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* subtle sharpening overlay without muting colors */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        rgba(10,12,18,0.25),
+        rgba(10,12,18,0.35)
+    );
+}
+
 .content {
+    position: relative;
     text-align: center;
-    color: white;
+    color: #ffffff;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.08em;
-    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 20px rgba(0,0,0,0.55);
 }
 
 .launching {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 500;
     opacity: 0.9;
 }
 
 .spring {
-    margin-top: 12px;
-    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    margin-top: 14px;
+    font-size: clamp(3rem, 5vw, 5rem);
     font-weight: 700;
 }
 </style>
