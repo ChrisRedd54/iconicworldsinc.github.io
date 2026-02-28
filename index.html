@@ -1,62 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Launching Spring 2026</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: #0e1117;
 }
 
-.hero {
-    position: relative;
-    height: 100vh;
-    width: 100%;
+body {
     background-image: url('background.png');
     background-position: center center;
-    background-size: cover;       /* full bleed */
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* subtle sharpening overlay without muting colors */
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(10,12,18,0.25),
-        rgba(10,12,18,0.35)
-    );
-}
-
-.content {
-    position: relative;
-    text-align: center;
-    color: #ffffff;
     font-family: 'Playfair Display', serif;
-    letter-spacing: 0.08em;
-    text-shadow: 0 4px 20px rgba(0,0,0,0.55);
+    color: white;
+    text-align: center;
 }
 
 .launching {
     font-size: 1.2rem;
-    font-weight: 500;
-    opacity: 0.9;
+    letter-spacing: 0.1em;
 }
 
 .spring {
-    margin-top: 14px;
     font-size: clamp(3rem, 5vw, 5rem);
+    margin-top: 10px;
     font-weight: 700;
 }
 </style>
@@ -64,11 +43,9 @@ html, body {
 
 <body>
 
-<div class="hero">
-    <div class="content">
-        <div class="launching">LAUNCHING</div>
-        <div class="spring">SPRING 2026</div>
-    </div>
+<div>
+    <div class="launching">LAUNCHING</div>
+    <div class="spring">SPRING 2026</div>
 </div>
 
 </body>
