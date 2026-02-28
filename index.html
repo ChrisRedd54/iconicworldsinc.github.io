@@ -16,36 +16,29 @@ html, body {
 }
 
 .hero {
-    position: relative;
     height: 100vh;
     width: 100%;
-    background: url('background.jpg') center center / cover no-repeat;
+    background-image: url('background.jpg');
+    background-position: center center;
+    background-size: contain;   /* was cover */
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        rgba(10, 12, 18, 0.60),
-        rgba(10, 12, 18, 0.75)
-    );
-}
-
 .content {
-    position: relative;
     text-align: center;
-    color: #ffffff;
+    color: white;
     font-family: 'Playfair Display', serif;
     letter-spacing: 0.08em;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.5);
 }
 
 .launching {
     font-size: 1.3rem;
     font-weight: 500;
-    opacity: 0.85;
+    opacity: 0.9;
 }
 
 .spring {
@@ -59,7 +52,6 @@ html, body {
 <body>
 
 <div class="hero">
-    <div class="overlay"></div>
     <div class="content">
         <div class="launching">LAUNCHING</div>
         <div class="spring">SPRING 2026</div>
