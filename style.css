@@ -1,0 +1,295 @@
+/* ============================================
+   ICONIC WORLDS — Dark Cinematic Premium
+   ============================================ */
+
+:root {
+  --black:       #080808;
+  --deep:        #0d0d0d;
+  --surface:     #111111;
+  --gold:        #c9a84c;
+  --gold-light:  #e8c97a;
+  --gold-dim:    #6b5520;
+  --ivory:       #f0ead8;
+  --ivory-dim:   #a09880;
+  --rule:        rgba(201, 168, 76, 0.25);
+  --rule-strong: rgba(201, 168, 76, 0.55);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+  color: var(--ivory);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow: hidden;
+}
+
+/* ── Grain overlay ── */
+#grain {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.045;
+  z-index: 100;
+}
+
+/* ── Scene wrapper ── */
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ── Theatre curtains ── */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 18%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.curtain-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #0a0704 0%,
+    #100c06 40%,
+    transparent 100%
+  );
+}
+
+.curtain-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #0a0704 0%,
+    #100c06 40%,
+    transparent 100%
+  );
+}
+
+/* ── Radial spotlight ── */
+.scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 65% 70% at 50% 48%,
+    rgba(201, 168, 76, 0.04) 0%,
+    rgba(201, 168, 76, 0.015) 40%,
+    transparent 70%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Stage (content card) ── */
+.stage {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 3.5rem 4rem;
+  max-width: 640px;
+  width: 90%;
+  animation: rise 1.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Logo mark ── */
+.logo-mark {
+  font-size: 1.1rem;
+  color: var(--gold);
+  letter-spacing: 0.25em;
+  margin-bottom: 1.6rem;
+  opacity: 0;
+  animation: fade 1s ease 0.4s forwards;
+}
+
+/* ── Rules ── */
+.rule {
+  border: none;
+  height: 1px;
+  margin: 0 auto;
+}
+
+.rule-top {
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--rule-strong), transparent);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fade 1s ease 0.5s forwards;
+}
+
+.rule-mid {
+  width: 60%;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+  margin: 1.4rem auto;
+  opacity: 0;
+  animation: fade 1s ease 0.8s forwards;
+}
+
+.rule-thin {
+  width: 40%;
+  background: linear-gradient(to right, transparent, var(--rule), transparent);
+  margin: 1.2rem auto;
+  opacity: 0;
+  animation: fade 1s ease 1s forwards;
+}
+
+.rule-bottom {
+  width: 100%;
+  background: linear-gradient(to right, transparent, var(--rule-strong), transparent);
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fade 1s ease 1.4s forwards;
+}
+
+/* ── Wordmark ── */
+header {
+  opacity: 0;
+  animation: fade 1s ease 0.6s forwards;
+}
+
+.wordmark {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(3.2rem, 8vw, 5.4rem);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ivory);
+  line-height: 1.05;
+  display: flex;
+  justify-content: center;
+  gap: 0.22em;
+}
+
+.word {
+  display: inline-block;
+}
+
+.inc {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 0.5rem;
+}
+
+/* ── Descriptor ── */
+.descriptor {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  letter-spacing: 0.06em;
+  line-height: 1.7;
+  color: var(--ivory-dim);
+  opacity: 0;
+  animation: fade 1s ease 0.9s forwards;
+}
+
+.descriptor em {
+  font-style: italic;
+  color: var(--gold-light);
+  font-weight: 300;
+}
+
+/* ── Founder ── */
+.founder {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ivory-dim);
+  line-height: 1;
+  opacity: 0;
+  animation: fade 1s ease 1.1s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.last-name {
+  color: var(--ivory);
+}
+
+.title-line {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+}
+
+/* ── Referral line ── */
+.referral {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(0.88rem, 1.8vw, 1rem);
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  opacity: 0;
+  animation: fade 1s ease 1.2s forwards;
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: 1.8rem;
+  opacity: 0;
+  animation: fade 1s ease 1.5s forwards;
+}
+
+.footer-text {
+  font-family: 'Tenor Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(160, 152, 128, 0.35);
+}
+
+/* ── Shared fade animation ── */
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .stage {
+    padding: 2.5rem 1.8rem;
+  }
+  .curtain {
+    width: 8%;
+  }
+  .wordmark {
+    flex-direction: column;
+    gap: 0;
+    letter-spacing: 0.18em;
+  }
+}
